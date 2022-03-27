@@ -1,5 +1,7 @@
 package com.monk.AOPdemo.controller;
 
+import java.util.zip.DataFormatException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,12 +13,17 @@ public class Controller2 {
 	Controller1 con1;
 
 	@GetMapping("/2")
-	public String GetMethod() {
-		return "helloFROM controller2";
+	public String GetMethod() throws Exception {
+		try {
+			throw new DataFormatException("TEST");
+		} catch (Exception e) {
+			throw new DataFormatException("TEST1");
+		}
+//		return "helloFROM controller2";
 	}
 
 	@GetMapping("/21")
-	public String firstGetMethod() {
+	public String firstGetMethod() throws Exception {
 
 		System.out.println(GetMethod());
 
@@ -24,10 +31,9 @@ public class Controller2 {
 
 		return "hello 21";
 	}
-	
-	
+
 	@GetMapping("/22")
-	private String privateMethodTestAspect() {
+	public String privateMethodTestAspect() {
 		return "helloFROM controller3";
 	}
 
