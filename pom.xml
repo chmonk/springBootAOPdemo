@@ -16,6 +16,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
+		<aspectj-plugin.version>1.11</aspectj-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -58,6 +59,15 @@
 			<version>2.13.1</version>
 		</dependency>
 
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+		</dependency>
 
 	</dependencies>
 

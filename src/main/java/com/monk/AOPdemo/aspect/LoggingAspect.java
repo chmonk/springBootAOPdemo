@@ -101,7 +101,11 @@ public class LoggingAspect {
 		log.error(sw.toString());
 	}
 
-	@Pointcut("execution( * com.monk.AOPdemo.controller..*.*(..)))")
+	@Pointcut("execution(* com.monk.AOPdemo.controller..*.*(..)))")
+	public void alldelegate23() {
+	}
+	
+	@Pointcut("within(com.monk.AOPdemo.controller..*)")
 	public void alldelegate() {
 	}
 
